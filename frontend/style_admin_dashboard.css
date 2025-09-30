@@ -1,6 +1,9 @@
+/* --- General Reset & Basic Styling --- */
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  /* Ensures padding doesn't affect final width */
 }
 
 body {
@@ -8,169 +11,261 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.logo {
-  text-decoration: none;
-  color: black;
-  font-size: x-large;
-  font-weight: 500;
-  border: 2px solid white;
-  border-radius: 25px;
-  background-color: white;
-  padding: 7px;
+/* --- General Layout Improvements --- */
+main {
+  max-width: 1200px;
+  /* Constrains the main content width */
+  margin: 0 auto;
+  /* Centers the content on large screens */
+  padding: 0 20px;
+  /* Provides space on the sides for smaller screens */
 }
 
-ul li {
-  list-style: none;
-  font-size: large;
-  color: white;
-}
 
+/* --- Navigation --- */
 nav {
   background-color: rgb(23, 23, 23);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 9vh;
-  padding: 6px 20px;
+  min-height: 9vh;
+  padding: 15px 20px;
+  gap: 10px;
+}
 
+.logo {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 2px solid white;
+  border-radius: 25px;
+  background-color: white;
+  padding: 7px 15px;
 }
 
 ul {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 1rem;
 }
 
-.log-out{
-  padding: 9px 12px;
-  border-radius: 10px;
-  font-size: 13px;
-  background-color: rgb(185, 2, 185);
+ul li {
+  list-style: none;
+  font-size: 1rem;
   color: white;
-  border: 2px black;
-}
-
-.log-out:hover{
-  background-color: rgb(98, 1, 98);
   cursor: pointer;
 }
 
+.log-out {
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  background-color: rgb(185, 2, 185);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.log-out:hover {
+  background-color: rgb(98, 1, 98);
+}
+
+
+/* --- Hero Section --- */
 #hero {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  /* Stack vertically on mobile */
+  align-items: center;
+  text-align: center;
+  margin: 60px 0;
+  gap: 61px;
 }
 
 .left {
   background-color: rgb(23, 23, 23);
   color: white;
-  font-size: 2.6rem;
+  font-size: 1.5rem;
+  /* Adjusted font size for mobile */
   font-weight: 400;
-  height: 34vh;
-  width: 34vw;
-  padding: 20px 10px;
-  margin: 120px;
-  border-radius: 15px;
-  gap: 5px;
-}
-
-.right {
-  background-color: rgb(26, 26, 26);
-  color: white;
-  font-size: 2rem;
-  font-weight: 500;
-  height: 20vh;
-  width: 25vw;
-  text-align: center;
-  /* margin: auto; */
+  width: 100%;
+  /* Use full width */
+  max-width: 550px;
+  /* But don't let it get too wide */
   padding: 30px;
-  margin: 30px;
   border-radius: 15px;
-  gap: 5px;
+  /* height: 40vh; */
 }
 
 #type-writer {
-  /* background-color: blue; */
   color: rgb(185, 2, 185);
+  /* Set a fixed height that is large enough to hold one line of text.
+      This prevents the container from collapsing when empty and stops the page from jumping.
+    */
+  height: 70px;
+  /* We use 'height' instead of 'min-height' to ensure the size never changes. */
 }
 
+/* Add this new CSS to your style.css file */
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right img {
+  width: 250px;
+  /* Set a size for the image on mobile */
+  height: 250px;
+  border-radius: 50%;
+  /* This makes the image a perfect circle */
+  border: 5px solid rgb(185, 2, 185);
+  /* Optional cool-looking border */
+  object-fit: cover;
+  /* Ensures your image fills the circle without stretching */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* For a smooth hover effect */
+
+}
+
+/* Add a subtle hover effect */
+.right img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(185, 2, 185, 0.7);
+}
+
+/* INSIDE your existing media query for tablets */
+@media (min-width: 768px) {
+  #hero {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    margin: 120px 0;
+  }
+
+  .left {
+    font-size: 2.2rem;
+    width: 55%;
+    /* Give a bit more space to the text */
+  }
+
+  /* ADD THIS NEW RULE */
+  .right {
+    width: 40%;
+  }
+
+  #projects h2 {
+    font-size: 2.5rem;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- HR Dividers --- */
 hr {
   border: 0;
   background-color: white;
   height: 1.2px;
-  margin: 20px 60px;
+  margin: 20px 0;
+  /* Let parent padding handle side spacing */
 }
 
 .above-footer-hr {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
   border: 0;
   background-color: white;
   height: 1.2px;
-  margin: 50px 60px;
 }
 
-#projects h2 {
-  color: white;
-  margin-left: 60px;
-  font-size: xx-large;
-  font-weight: 600;
-  margin-bottom: 25px;
-}
 
+/* --- Projects Section --- */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  /* Allow items to wrap on small screens */
+  gap: 1rem;
   margin-bottom: 1.5rem;
+}
+
+#projects h2 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .add-btn {
   padding: 8px 16px;
   font-size: 1rem;
-  margin-right: 60px;
   background-color: rgb(139, 1, 139);
-  /* A sample purple color */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-
 }
 
 .add-btn:hover {
   background-color: rgb(67, 0, 67);
 }
 
-
-/* #projects{
-    width: 70vw;
-} */
-
 .project-grid {
-  width: 70vw;
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    justify-content: center;
-    align-items: center; */
-  grid-template-columns: repeat(3, minmax(150px, 1fr));
-  gap: 60px;
-  justify-items: center;
-  align-items: center;
-  margin: auto;
-  /* padding: 2rem; */
+  grid-template-columns: 1fr;
+  /* 1 column for mobile */
+  gap: 30px;
+  width: 100%;
 }
 
+
+/* --- Project Card --- */
 .project-card {
-  width: 20vw;
-  height: 15vw;
-  background-color: white;
-  border-radius: 10px;
+  width: 100%;
+  /* Card will fill the grid column */
+  aspect-ratio: 4 / 3;
+  /* Maintain aspect ratio instead of fixed height */
   background-color: rgb(30, 30, 30);
+  border-radius: 10px;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+  /* Align site-name to bottom */
   position: relative;
   overflow: hidden;
+}
+
+.project-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Cover the entire card area */
+  z-index: 1;
+}
+
+.project-card .site-name {
+  color: white;
+  width: auto;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Semi-transparent background */
+  margin: 10px;
+  z-index: 3;
+  /* Ensure it's above the image and overlay */
+  position: relative;
+  /* Needed for z-index to work */
 }
 
 .card-overlay {
@@ -180,92 +275,55 @@ hr {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  /* Black with 70% opacity */
-
-  /* Center the buttons inside the overlay */
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  /* Space between buttons */
-
-  /* Hide the overlay by default */
   opacity: 0;
-
-  /* Add a smooth fade-in transition */
   transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+  /* Sits between image and site name */
 }
 
-/* ✅ This is the key: Make the overlay visible when hovering over the card */
 .project-card:hover .card-overlay {
   opacity: 1;
 }
 
-/* Style the buttons */
-.edit-btn {
+.edit-btn,
+.delete-btn {
   padding: 8px 16px;
-  border: 1px solid white;
-  border-radius: 15px;
-  background-color: rgb(139, 1, 139);
+  border: none;
+  border-radius: 4px;
   color: white;
   cursor: pointer;
-  border-radius: 4px;
-  font-size: 1rem;
+  font-size: 0.9rem;
+}
+
+.edit-btn {
+  background-color: rgb(139, 1, 139);
 }
 
 .delete-btn {
-  padding: 8px 16px;
-  border: 1px solid white;
-  border-radius: 15px;
   background-color: #f44336;
-  color: white;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 1rem;
 }
 
 .edit-btn:hover {
   background-color: rgb(97, 1, 97);
-  /* Green */
-  /* border-color: #4CAF50; */
 }
 
 .delete-btn:hover {
   background-color: #be190e;
-  /* Red */
-  /* border-color: #f44336; */
 }
 
-.project-card img {
-  width: 19vw;
-  height: 23vh;
-  margin: 5px;
-  border-radius: 10px;
-}
 
-.project-card .site-name {
-  border: 2px solid white;
-  color: white;
-  margin-bottom: 5px;
-  width: 19vw;
-  height: 6vh;
-  /* text-align: center; */
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* .dialog-modal{
-    position: relative;
-} */
-
+/* --- Modal --- */
 #project-modal {
   border: none;
   border-radius: 12px;
-  padding: 20px 35px;
-  width: 460px;
-  max-width: 90%;
+  padding: 20px 25px;
+  width: 90%;
+  max-width: 500px;
+  /* Set a max-width for consistency */
   background: #111;
   color: #fff;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
@@ -275,17 +333,15 @@ hr {
   transform: translate(-50%, -50%);
 }
 
-/* Style the backdrop (overlay behind the modal) */
 #project-modal::backdrop {
   background: rgba(0, 0, 0, 0.6);
-  /* semi-transparent black */
   backdrop-filter: blur(2px);
 }
 
-/* Modal form inputs */
 #project-form input,
 #project-form textarea {
-  width: 95%;
+  width: 100%;
+  /* Inputs should take full width of form */
   margin: 8px 0 15px;
   padding: 10px;
   border-radius: 6px;
@@ -302,18 +358,14 @@ hr {
   box-shadow: 0 0 6px rgba(160, 32, 240, 0.6);
 }
 
-/* Buttons inside modal */
 .modal-buttons {
   display: flex;
-  justify-content: space-around;
+  gap: 10px;
   margin-top: 15px;
-  /* gap: 82px; */
-  align-items: center;
 }
 
 .modal-buttons button {
   flex: 1;
-  margin: 0 5px;
   padding: 10px;
   border: none;
   border-radius: 6px;
@@ -340,19 +392,8 @@ hr {
   background: #666;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
 
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
+/* --- Footer --- */
 footer {
   background-color: #111;
   color: #fff;
@@ -368,20 +409,9 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  /* Allow wrapping on small screens */
+  gap: 20px;
   padding: 0 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.foot-left {
-  text-align: center;
-  /* flex: 1; */
-}
-
-.foot-left p {
-  margin: 5px 0;
-  font-size: 14px;
 }
 
 .foot-left p span {
@@ -389,6 +419,75 @@ footer {
   font-weight: bold;
 }
 
-.backtotop:hover{
- color: #7f04cb;
+.backtotop:hover {
+  color: #7f04cb;
+}
+
+
+/*
+==============================================
+--- Media Queries for Responsiveness ---
+==============================================
+*/
+
+/* --- For Tablets --- */
+@media (min-width: 768px) {
+  .left {
+    font-size: 2.2rem;
+  }
+
+  #projects h2 {
+    font-size: 2.5rem;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns */
+  }
+
+}
+
+@media (max-width: 635px) {
+  .foot-left-right {
+    /* This will center the items when they are side-by-side on a smaller screen */
+    justify-content: center;
+  }
+
+  .foot-left,
+  .foot-right {
+    /* This is the key part: it centers the text inside each item 
+           after they have stacked vertically */
+    text-align: center;
+    width: 100%;
+    /* Ensure each item takes full width for proper centering */
+  }
+}
+
+@media (max-width: 450px) {
+  .logo {
+    font-size: 1rem;
+    width: 27vw;
+    text-align: center;
+    padding: 10px;
+  }
+
+  ul {
+    font-size: 1rem;
+  }
+}
+
+
+/* --- For Laptops and Desktops --- */
+@media (min-width: 1024px) {
+  #hero {
+    flex-direction: row;
+    /* Side-by-side on large screens */
+    text-align: left;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+  }
+
 }
