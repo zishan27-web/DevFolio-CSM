@@ -10,7 +10,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-     origin: 'https://your-frontend-url.netlify.app'
+     origin: 'https://devfolio-csm.netlify.app'
 }));
 app.use(express.json());
 
