@@ -222,5 +222,5 @@ async function deleteProject(projectId){
 
 document.querySelector(".log-out").addEventListener('click', ()=>{
     localStorage.removeItem('authToken');
-    window.location.href = '/frontend/admin_login.html';
+    window.location.href = 'admin_login.html';
 })
