@@ -94,7 +94,7 @@ function openModal(project)
     const titleEl = document.getElementById("title");
     const descriptionEl = document.getElementById("description");
     const imgUrlEl = document.getElementById("imgUrl");
-    const pillContainer = document.querySelector('.pills');
+    const pillContainer = document.querySelector('.pills-tech');
     const linkContainer = document.querySelector('.links');
 
     titleEl.textContent = project.title;
