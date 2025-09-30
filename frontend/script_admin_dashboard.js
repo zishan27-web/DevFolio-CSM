@@ -75,7 +75,8 @@ async function fetchAndDisplayProjets() {
     const projectGrid = document.querySelector('.project-grid');
     const status = document.getElementById('status-message');
     try {
-        const response = await fetch('http://localhost:5000/api/project');
+        const apiUrl = 'https://devfolio-csm.onrender.com';
+        const response = await fetch(`${apiUrl}/api/project`);
         if (!response.ok) {
             throw new Error(`HTTP error status : ${response.status}`);
         }
@@ -177,7 +178,8 @@ projectForm.addEventListener('submit', async (event)=>{
     const method = projectId ? 'PUT' : 'POST';
 
     try {
-        const response = await fetch('http://localhost:5000' + url, {
+        const apiUrl = 'https://devfolio-csm.onrender.com';
+        const response = await fetch(`${apiUrl}` + url, {
             method: method,
             headers: {
                 'Content-Type': 'application/json',
@@ -201,7 +203,8 @@ async function deleteProject(projectId){
 
     const token = localStorage.getItem("authToken");
     try {
-        const response = await fetch(`http://localhost:5000/api/project/${projectId}`,{
+        const apiUrl = 'https://devfolio-csm.onrender.com';
+        const response = await fetch(`${apiUrl}/api/project/${projectId}`,{
             method: 'DELETE',
             headers:{
                 'Authorization' : `Bearer ${token}`
