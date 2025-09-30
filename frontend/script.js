@@ -48,7 +48,8 @@ async function fetchAndDisplayProjets() {
     const projectGrid = document.querySelector('.project-grid');
     const status = document.getElementById('status-message');
     try {
-        const response = await fetch('http://localhost:5000/api/project');
+        const apiUrl = 'https://your-backend-url.onrender.com'; 
+        const response = await fetch(`${apiUrl}/api/project`);
         if (!response.ok) {
             throw new Error(`HTTP error status : ${response.status}`);
         }
