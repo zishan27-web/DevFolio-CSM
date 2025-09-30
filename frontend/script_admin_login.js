@@ -8,7 +8,7 @@ document.getElementById("myform").addEventListener('submit', (event)=>{
     const username = usernameInput.value;
     const password = passwordInput.value;
 
-    fetch('http://localhost:5000/api/auth/login', {
+    fetch('https://devfolio-csm.onrender.com/api/auth/login', {
         method: 'POST',
         headers:{'Content-Type': 'application/json'},
         body: JSON.stringify({username: username, password: password})
