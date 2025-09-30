@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFolio</title>
+    <link rel="stylesheet" href="style_admin_dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Zishan DevFolio</a>
+            <ul>
+                <li>About</li>
+                <li>Contact</li>
+                <!-- <li>About</li> -->
+                <button class="log-out">Log out</button>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <div class="left">
+                <p>
+                    I am Zishan and I will build my own Empire for sure, by the grace of
+                </p>
+                <p id="type-writer">
+                </p>
+            </div>
+            <!-- <div class="right"></div> -->
+        </section>
+        <hr>
+        <section id="projects">
+            <div class="header">
+                <h2>My Projects</h2>
+                <button id="add-project-btn" class="add-btn">+ Add New Project</button>
+            </div>
+            <div id="status-message"></div>
+            <div class="project-grid">
+            </div>
+        </section>
+    </main>
+    <dialog id="project-modal">
+        <form action="submit" method="post" id="project-form">
+
+            <h2 id="modal-title"></h2>
+            <input type="hidden" id="project-id">
+
+            <label for="title">Project Title: </label><br>
+            <input type="text" id="title" name="title"><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="imgUrl">Image URL:</label>
+            <input type="text" id="imgUrl" name="imgUrl" required>
+
+            <label for="techStack">Technologies (comma-separated):</label>
+            <input type="text" id="techStack" name="techStack" required>
+
+            <label for="liveSiteUrl">Live Site URL:</label>
+            <input type="text" id="liveSiteUrl" name="liveSiteUrl">
+
+            <label for="githubUrl">GitHub URL:</label>
+            <input type="text" id="githubUrl" name="githubUrl">
+
+            <div class="modal-buttons">
+                <button type="submit" id="save-btn">Save Project</button>
+                <button type="button" id="cancel-btn">Cancel</button>
+            </div>
+        </form>
+        <!-- <button class="close-add-modal">Close</button> -->
+    </dialog>
+    <hr class="above-footer-hr">
+    <footer>
+        <div class="foot-left-right">
+
+            <!-- Left Side: Admin Only -->
+            <!-- <div>
+                <a href="admin_login.html" style="color: #a020f0; font-size: 14px; text-decoration: none;">Admin
+                    Only</a>
+            </div> -->
+
+            <!-- Center: Copyright -->
+            <div class="foot-left">
+                <p>
+                    © 2025 <span>Zishan DevFolio</span>. All rights reserved.
+                </p>
+            </div>
+
+            <!-- Right Side: Social Links -->
+            <div class="foot-right">
+                <a href="https://github.com/yourusername" target="_blank"
+                    style="color: #fff; margin: 0 10px; text-decoration: none;">GitHub</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"
+                    style="color: #fff; margin: 0 10px; text-decoration: none;">LinkedIn</a>
+                <a href="mailto:your@email.com" style="color: #fff; margin: 0 10px; text-decoration: none;">Email</a>
+            </div>
+        </div>
+
+        <!-- Back to Top -->
+        <div style="text-align: center; margin-top: 10px; position: relative; right: 10px;">
+            <a href="#top" style="color: #a020f0; font-size: 14px; text-decoration: none;"><span class="backtotop"> ↑ Back to Top</span></a>
+        </div>
+    </footer>
+
+    <script src="script_admin_dashboard.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>

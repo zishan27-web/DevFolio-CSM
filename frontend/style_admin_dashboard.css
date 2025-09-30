@@ -1,0 +1,394 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+  font-size: x-large;
+  font-weight: 500;
+  border: 2px solid white;
+  border-radius: 25px;
+  background-color: white;
+  padding: 7px;
+}
+
+ul li {
+  list-style: none;
+  font-size: large;
+  color: white;
+}
+
+nav {
+  background-color: rgb(23, 23, 23);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 9vh;
+  padding: 6px 20px;
+
+}
+
+ul {
+  display: flex;
+  gap: 10px;
+}
+
+.log-out{
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  background-color: rgb(185, 2, 185);
+  color: white;
+  border: 2px black;
+}
+
+.log-out:hover{
+  background-color: rgb(98, 1, 98);
+  cursor: pointer;
+}
+
+#hero {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  background-color: rgb(23, 23, 23);
+  color: white;
+  font-size: 2.6rem;
+  font-weight: 400;
+  height: 34vh;
+  width: 34vw;
+  padding: 20px 10px;
+  margin: 120px;
+  border-radius: 15px;
+  gap: 5px;
+}
+
+.right {
+  background-color: rgb(26, 26, 26);
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  height: 20vh;
+  width: 25vw;
+  text-align: center;
+  /* margin: auto; */
+  padding: 30px;
+  margin: 30px;
+  border-radius: 15px;
+  gap: 5px;
+}
+
+#type-writer {
+  /* background-color: blue; */
+  color: rgb(185, 2, 185);
+}
+
+hr {
+  border: 0;
+  background-color: white;
+  height: 1.2px;
+  margin: 20px 60px;
+}
+
+.above-footer-hr {
+  border: 0;
+  background-color: white;
+  height: 1.2px;
+  margin: 50px 60px;
+}
+
+#projects h2 {
+  color: white;
+  margin-left: 60px;
+  font-size: xx-large;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.add-btn {
+  padding: 8px 16px;
+  font-size: 1rem;
+  margin-right: 60px;
+  background-color: rgb(139, 1, 139);
+  /* A sample purple color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+}
+
+.add-btn:hover {
+  background-color: rgb(67, 0, 67);
+}
+
+
+/* #projects{
+    width: 70vw;
+} */
+
+.project-grid {
+  width: 70vw;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+    align-items: center; */
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  gap: 60px;
+  justify-items: center;
+  align-items: center;
+  margin: auto;
+  /* padding: 2rem; */
+}
+
+.project-card {
+  width: 20vw;
+  height: 15vw;
+  background-color: white;
+  border-radius: 10px;
+  background-color: rgb(30, 30, 30);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Black with 70% opacity */
+
+  /* Center the buttons inside the overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* Space between buttons */
+
+  /* Hide the overlay by default */
+  opacity: 0;
+
+  /* Add a smooth fade-in transition */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* ✅ This is the key: Make the overlay visible when hovering over the card */
+.project-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* Style the buttons */
+.edit-btn {
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: rgb(139, 1, 139);
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.delete-btn {
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.edit-btn:hover {
+  background-color: rgb(97, 1, 97);
+  /* Green */
+  /* border-color: #4CAF50; */
+}
+
+.delete-btn:hover {
+  background-color: #be190e;
+  /* Red */
+  /* border-color: #f44336; */
+}
+
+.project-card img {
+  width: 19vw;
+  height: 23vh;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.project-card .site-name {
+  border: 2px solid white;
+  color: white;
+  margin-bottom: 5px;
+  width: 19vw;
+  height: 6vh;
+  /* text-align: center; */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .dialog-modal{
+    position: relative;
+} */
+
+#project-modal {
+  border: none;
+  border-radius: 12px;
+  padding: 20px 35px;
+  width: 460px;
+  max-width: 90%;
+  background: #111;
+  color: #fff;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Style the backdrop (overlay behind the modal) */
+#project-modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  /* semi-transparent black */
+  backdrop-filter: blur(2px);
+}
+
+/* Modal form inputs */
+#project-form input,
+#project-form textarea {
+  width: 95%;
+  margin: 8px 0 15px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  font-size: 14px;
+}
+
+#project-form input:focus,
+#project-form textarea:focus {
+  outline: none;
+  border-color: #a020f0;
+  box-shadow: 0 0 6px rgba(160, 32, 240, 0.6);
+}
+
+/* Buttons inside modal */
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  /* gap: 82px; */
+  align-items: center;
+}
+
+.modal-buttons button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.modal-buttons button[type="submit"] {
+  background: #a020f0;
+  color: #fff;
+}
+
+.modal-buttons button[type="submit"]:hover {
+  background: #7a0cc4;
+}
+
+#cancel-btn {
+  background: #444;
+  color: #fff;
+}
+
+#cancel-btn:hover {
+  background: #666;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+footer {
+  background-color: #111;
+  color: #fff;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid #333;
+}
+
+.foot-left-right {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foot-left {
+  text-align: center;
+  /* flex: 1; */
+}
+
+.foot-left p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.foot-left p span {
+  color: #a020f0;
+  font-weight: bold;
+}
+
+.backtotop:hover{
+ color: #7f04cb;
+}

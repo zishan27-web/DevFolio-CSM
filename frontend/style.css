@@ -1,0 +1,357 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+    font-family: "Poppins", sans-serif;
+}
+
+.logo {
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+    font-weight: 500;
+    border: 2px solid white;
+    border-radius: 25px;
+    background-color: white;
+    padding: 7px;
+}
+
+ul li {
+    list-style: none;
+    font-size: large;
+    color: white;
+}
+
+nav {
+    background-color: rgb(23, 23, 23);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 9vh;
+    padding: 6px 20px;
+
+}
+
+ul {
+    display: flex;
+    gap: 10px;
+}
+
+#hero {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    background-color: rgb(23, 23, 23);
+    color: white;
+    font-size: 2.6rem;
+    font-weight: 400;
+    height: 26vh;
+    width: 30vw;
+    padding: 20px 10px;
+    margin: 120px;
+    border-radius: 15px;
+    gap: 5px;
+}
+
+.right {
+    background-color: rgb(26, 26, 26);
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    height: 20vh;
+    width: 25vw;
+    text-align: center;
+    /* margin: auto; */
+    padding: 30px;
+    margin: 30px;
+    border-radius: 15px;
+    gap: 5px;
+}
+
+#type-writer {
+    /* background-color: blue; */
+    color: rgb(185, 2, 185);
+}
+
+hr {
+    border: 0;
+    background-color: white;
+    height: 1.2px;
+    margin: 10px 60px;
+}
+
+.above-footer-hr {
+    border: 0;
+    background-color: white;
+    height: 1.2px;
+    margin: 50px 60px;
+}
+
+#projects h2 {
+    color: white;
+    margin-left: 60px;
+    font-size: xx-large;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* #projects{
+    width: 70vw;
+} */
+
+.project-grid {
+    width: 70vw;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+    align-items: center; */
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: 60px;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    /* padding: 2rem; */
+}
+
+.project-card {
+    width: 20vw;
+    height: 15vw;
+    background-color: white;
+    border-radius: 10px;
+    background-color: rgb(30, 30, 30);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card img {
+    width: 19vw;
+    height: 23vh;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.project-card .site-name {
+    border: 2px solid white;
+    color: white;
+    margin-bottom: 5px;
+    width: 19vw;
+    height: 6vh;
+    /* text-align: center; */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#project-modal {
+    border: none;
+    border-radius: 12px;
+    padding: 20px 30px;
+    width: 600px;
+    height: 70vh;
+    max-width: 90%;
+    background: #111;
+    color: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 20px;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+#project-modal::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    /* semi-transparent black */
+    backdrop-filter: blur(2px);
+}
+
+#title {
+    color: #a020f0;
+    text-align: center;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title img {
+    width: 0.8vw;
+    height: 1.5vh;
+}
+
+.description,
+.techStack,
+.links {
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    gap: 5px;
+    margin: 16px 0px;
+    border: 2px solid rgb(27, 27, 27);
+    background-color: rgb(27, 27, 27);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.imgUrl-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 10px;
+}
+
+.imgUrl-class img{
+    height: 20vh;
+    width: 20vw;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: start; */
+    align-items: start;
+    gap: 10px;
+}
+
+.liveSite {
+    text-decoration: none;
+}
+
+.githubLink {
+    text-decoration: none;
+
+}
+
+.modal-buttons {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+#cancel-btn:hover {
+    box-shadow: 0 0 15px 5px rgba(250, 28, 28, 0.7);
+}
+
+#project-modal textarea {
+    width: 95%;
+    margin: 8px 0 15px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #222;
+    color: #fff;
+    font-size: 14px;
+}
+
+.pills {
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    align-items: center;
+    gap: 13px;
+    margin: 5px 0px;
+    flex-wrap: wrap;
+}
+
+.pill {
+    background-color: white;
+    color: black;
+    padding: 6px 10px;
+    border-radius: 15px;
+    width: auto;
+    height: 3vh;
+    text-align: center;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 70vh;
+    height: 46vh;
+    max-width: 80%;
+    max-height: 80%;
+    /* Position it in the vertical center */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Add the zoom animation */
+    animation-name: zoom;
+    animation-duration: 0.5s;
+}
+
+@keyframes zoom {
+    from {
+        transform: translateY(-50%) scale(0.1)
+    }
+
+    to {
+        transform: translateY(-50%) scale(1)
+    }
+}
+
+/* The close button (X) */
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    /* Width for vertical scrollbar */
+    height: 10px;
+    /* Height for horizontal scrollbar */
+}
+
+/* Styling the scrollbar track (the background) */
+::-webkit-scrollbar-track {
+    background: black;
+    border-radius: 10px;
+}
+
+/* Styling the scrollbar thumb (the draggable handle) */
+::-webkit-scrollbar-thumb {
+    /* background: #a020f0; */
+    background: rgb(54, 54, 54);
+    border-radius: 10px;
+}
+
+/* Styling the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    /* background: #7404ba; */
+    background: rgb(39, 39, 39);
+}
+
+/* Styling the scrollbar corner (where horizontal and vertical meet) */
+::-webkit-scrollbar-corner {
+    background: #ccc;
+}

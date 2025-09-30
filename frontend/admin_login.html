@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style_login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="myform" action="/login" method="post"> <!-- The 'action' attribute should point to your server-side login script -->
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <img class="togglebutton" style="position: absolute; top: 55%; right: 42%; width: 1vw; height: 2vh; cursor: pointer;" width="10px" height="10px" src="./images/hide.png" alt="">
+            </div>
+            <div class="logbutton">
+                <button type="submit" id="logbut">Log In</button>
+            </div>
+            <div style="display: flex; justify-self: center; margin-top: 10px;" class="home">
+                <a style="text-decoration: none; text-align: center; color: purple; font-size: 14px; font-weight: bold;" href="/frontend/index.html">← Back to homepage</a>
+            </div>
+        </form>
+    </div>
+    <script src="script_admin_login.js"></script>
+</body>
+</html>
