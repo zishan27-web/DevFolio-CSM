@@ -69,7 +69,7 @@ ul li a:hover {
     flex-direction: column;
     /* Stack elements vertically on mobile first */
     text-align: center;
-    margin: 60px 0;
+    margin: 50px 0;
     /* Simpler margin */
     gap: 30px;
 }
@@ -82,7 +82,7 @@ ul li a:hover {
     font-weight: 400;
     width: 100%;
     /* Take full width on mobile */
-    max-width: 500px;
+    max-width: 664px;
     /* But not too wide on desktop */
     padding: 30px;
     border-radius: 15px;
@@ -91,7 +91,7 @@ ul li a:hover {
 #type-writer {
     color: rgb(185, 2, 185);
     /* min-height: 45px; */
-    height: 70px;
+    height: 80px;
     /* Give it space so layout doesn't jump */
 }
 
@@ -559,7 +559,7 @@ hr {
 
     .left {
         font-size: 2.2rem;
-        width: 45%;
+        width: 65%;
         /* Use percentage */
     }
 

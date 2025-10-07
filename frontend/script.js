@@ -38,7 +38,7 @@ function typeWriter(word, delay, elementId) {
 }
 
 window.onload = function () {
-    const text = ['Web Developer', 'Graphic Designer', 'Web Designer', 'Video Editor'];
+    const text = ['Full-Stack Developer.', 'MERN Stack Specialist.', 'Problem Solver.'];
     // const statement = "Web Developer";
     typeWriter(text, 70, "type-writer");
     fetchAndDisplayProjets();
