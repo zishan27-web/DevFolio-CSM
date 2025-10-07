@@ -36,8 +36,7 @@ function typeWriter(word, delay, elementId) {
     type();
 }
 
-// --- PAGE GUARD ---
-// This code runs immediately when the script is loaded.
+// PAGE GUARD 
 (function () {
     const token = localStorage.getItem('authToken');
 
@@ -47,7 +46,6 @@ function typeWriter(word, delay, elementId) {
         return; // Stop further execution
     }
 
-    // Optional but recommended: Check if the token is expired.
     // This requires a small function to decode the token.
     try {
         const payload = JSON.parse(atob(token.split('.')[1]));
@@ -63,6 +61,18 @@ function typeWriter(word, delay, elementId) {
     }
 })(); // The () at the end makes this function run immediately
 
+window.addEventListener('pageshow', function(event) {
+    // The 'persisted' property is true if the page is from the bfcache
+    if (event.persisted) {
+        // When the page is restored from the cache, check for the token again
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+            // If the token is gone (because you logged out), force a full reload.
+            // This reload will alsoe then trigger your Page Guard at the top of the script.
+            window.location.reload();
+        }
+    }
+});
 
 window.onload = function () {
     const text = ['Allah', 'Mummy', 'Papa', 'My self obviously'];
