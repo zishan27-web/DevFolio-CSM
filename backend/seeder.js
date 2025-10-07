@@ -12,7 +12,7 @@ const importData = async() =>{
         await Admin.deleteMany();
 
         const salt = await bcrypt.genSalt(10);
-        const hashedpass = await bcrypt.hash("zishan@786123",  salt);
+        const hashedpass = await bcrypt.hash(process.env.ADMIN_PASSWORD,  salt);
 
         const admin = new Admin({
             username: "admin",
@@ -22,7 +22,7 @@ const importData = async() =>{
         await admin.save();
         console.log("Admin User Imported Successfully!");
         process.exit();
-    } catch (error) {
+    } catch (error) { 
         console.error(`Error: ${error}`);
         process.exit(1);
     }
